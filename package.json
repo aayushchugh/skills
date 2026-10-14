@@ -1,0 +1,7 @@
+{
+  "name": "skills",
+  "version": "0.0.0",
+  "private": true,
+  "files": ["skills"],
+  "description": "Agent skills."
+}
