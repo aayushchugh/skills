@@ -9,7 +9,7 @@ export function CopyCommand({ command, label }: CopyCommandProps) {
   const lines = command.split("\n").filter((line) => line.length > 0);
 
   return (
-    <div className="rounded-xl border border-border bg-card">
+    <div className="rounded-xl border border-border bg-background">
       <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2">
         <p className="text-sm text-neutral-400">{label}</p>
         {lines.length === 1 ? <CopyButton text={command} /> : null}

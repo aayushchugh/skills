@@ -4,7 +4,7 @@ export const skillCodeTheme: ThemeRegistration = {
   name: "skills-neutral",
   type: "dark",
   colors: {
-    "editor.background": "#171717",
+    "editor.background": "#111010",
     "editor.foreground": "#d4d4d4",
   },
   tokenColors: [

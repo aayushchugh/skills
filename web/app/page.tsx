@@ -6,11 +6,11 @@ import { npmPackageUrl, packageInstallCommand, site } from "@/lib/site";
 const textLink =
   "font-medium text-white underline underline-offset-2 hover:text-neutral-300";
 
-const panel = "rounded-xl border border-border bg-card/80 p-5 backdrop-blur-sm";
+const panel = "rounded-xl border border-border bg-card p-5";
 
 function StarBanner() {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card/80 px-4 py-3 backdrop-blur-sm">
+    <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3">
       <p className="text-sm text-neutral-300">
         Star the repo so other students can find these skills.
       </p>

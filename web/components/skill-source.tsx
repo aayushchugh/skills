@@ -14,7 +14,7 @@ export async function SkillSource({ source }: { source: string }) {
   const html = await highlightMarkdown(source);
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card">
+    <div className="overflow-hidden rounded-xl border border-border bg-background">
       <div className="flex items-center justify-between gap-3 border-b border-border px-4 py-2">
         <p className="font-mono text-sm text-neutral-400">SKILL.md</p>
         <CopyButton text={source} />
