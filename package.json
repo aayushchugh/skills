@@ -1,7 +1,9 @@
 {
-  "name": "skills",
-  "version": "0.0.0",
-  "private": true,
-  "files": ["skills"],
-  "description": "Agent skills."
+	"name": "@aayushchugh/skills",
+	"version": "0.1.0",
+	"description": "The agent skills I use while building real products.",
+	"files": [
+		"skills"
+	],
+	"license": "MIT"
 }
