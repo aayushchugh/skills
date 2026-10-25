@@ -11,6 +11,8 @@ description: >-
 
 Read the diff, the test results, the migrations, the feature flags, the dependency changes, the deploy config, and the known risks. Do not deploy, change production, or create a release until the user explicitly approves that step.
 
+No-go when a test result, a migration check, or a rollback is missing. Do not talk the release into a go.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

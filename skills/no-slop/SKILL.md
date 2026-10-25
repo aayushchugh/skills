@@ -12,6 +12,8 @@ description: >-
 
 Code only. Product docs, PRDs, and other non-code writing are out of scope. On a review, apply these rules to the diff and do not edit unless asked.
 
+Refuse a layer, abstraction, or dependency the current code does not need.
+
 ## Before editing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

@@ -14,6 +14,8 @@ Review application code, APIs, dependencies, secrets, and deployment configurati
 
 This is a read-only audit, not active pentesting. Do not send probes, payloads, traffic, or requests to a live target. Do not claim a control works unless repository evidence proves it. Do not edit the source.
 
+Report a gap a person can actually reach. A theoretical issue with no evidence is not a finding.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

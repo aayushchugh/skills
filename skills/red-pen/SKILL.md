@@ -12,6 +12,8 @@ description: >-
 
 Read the diff, the request it was meant to satisfy, every caller of a changed function, and the tests that cover the path. For a pull request, read the diff with `gh pr diff`. Do not edit the code.
 
+Report a bug, a regression, or a missed requirement. A style comment is not a finding.
+
 A security finding gets one line pointing to `open-doors`. A structure or duplication finding gets one line pointing to `one-shape`. A missing test gets one line pointing to `cases-to-run`.
 
 ## Before writing

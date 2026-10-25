@@ -12,6 +12,8 @@ description: >-
 
 Write the test-case document only. Do not write test code, run tests, or change the source. Cover a security requirement or access rule the source already states. Do not invent controls.
 
+Write the smallest set that would catch a real failure. Skip a case that does not change the outcome.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

@@ -12,6 +12,8 @@ description: >-
 
 The audit is read-only until the user approves a batch. Then apply one step at a time with `no-slop`.
 
+Make the smallest change that removes the drift. Do not add an abstraction a third copy does not force.
+
 Skip code the team does not own: `node_modules`, build output, generated files, vendored code, lockfiles, and migrations. A security issue gets one line pointing to `open-doors`.
 
 ## Before auditing

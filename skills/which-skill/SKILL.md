@@ -7,6 +7,10 @@ description: >-
 
 # Which skill
 
+## Scope
+
+Run one skill when one fits. Do not start a chain to look thorough.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

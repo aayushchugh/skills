@@ -12,6 +12,8 @@ description: >-
 
 Read only the path the bug touches, its callers, and the logs, traces, or connected sources needed to prove the cause. Do not edit the code. The fix goes to `no-slop`. The regression case goes to `cases-to-run`.
 
+Name the source. A local workaround is not a cause, and a cause without evidence stays a hypothesis.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.

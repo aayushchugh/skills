@@ -18,6 +18,8 @@ A spec describes what will be built. Documentation describes what exists.
 
 Code changes are out of scope. A security need is one requirement. Do not invent controls or run an audit.
 
+Write the short document a person can build or follow. Leave out a section that does not change a decision.
+
 ## Before writing
 
 Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.
