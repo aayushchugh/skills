@@ -1,0 +1,15 @@
+services:
+  skills_web:
+    image: skills-web
+    container_name: skills-web
+    working_dir: /app
+    ports:
+      - "3004:3000"
+    expose:
+      - "3000"
+    command: "npm start"
+    environment:
+      NODE_ENV: production
+    build:
+      context: .
+      dockerfile: Dockerfile
