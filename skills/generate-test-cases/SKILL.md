@@ -1,29 +1,22 @@
 ---
 name: generate-test-cases
 description: >-
-  Generate a small, risk-based set of structured test cases from a PRD, spec,
-  code change, bug report, or diff. Use when the user asks for test cases, QA
-  scenarios, or regression coverage. Do not use to write or run test code, or
-  to perform a security audit.
+  Write a small, risk-based set of test cases from a spec, diff, or bug
+  report. Use when the user asks for test cases or QA coverage. Do not write
+  test code or audit security.
 ---
 
 # Generate test cases
 
-## Use case
-
-Turn a source into the smallest set of cases a person can run. Each case traces to a requirement or a changed behavior.
-
 ## Scope
 
-Write the test-case document only. Do not write test code, run tests, or change the source.
-
-A security audit is out of scope. Cover a security requirement or access rule the source already states. Do not invent controls.
+Write the test-case document only. Do not write test code, run tests, or change the source. Cover a security requirement or access rule the source already states. Do not invent controls.
 
 ## Before writing
 
-Read the source, then ask every unanswered question that would change the expected behavior, data, environment, limits, or permissions. Send them in one turn, then write the cases once. Skip questions the source already answers.
+Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.
 
-Do not invent an expected result. Put the unknown under Open questions and name what it blocks.
+Ask what would change the expected behavior, data, environment, limits, or permissions. An unknown expected result is not a case. Do not write a result of "TBD" or "works correctly."
 
 ## What to read
 
@@ -35,15 +28,17 @@ If the repository already tests a behavior, cite that test. Do not write a dupli
 
 ## Which cases
 
-Cover the relevant happy path, failure, boundary, state change, permission, and regression. Use one representative value per equivalence class.
+Cover the relevant happy path, failure, boundary, state change, permission, and regression. Use one representative value per equivalence class. A boundary is the edge: the last allowed value and the first rejected value.
 
-Test one invalid condition at a time. Combine inputs only when they change the outcome together.
+Test one invalid condition at a time. Combine inputs only when they change the outcome together. One behavior is one case, even when the spec and the code both mention it. Cite both sources on that case.
 
 Skip a behavior the spec lists as a non-goal. A missing P0 behavior gets a case, or an open question that says why it cannot be tested yet.
 
-A bug gets one regression case: it fails on the current behavior and passes once the expected behavior is true.
+A bug gets one regression case: it fails on the current behavior and passes once the expected behavior is true. A state flow gets the valid path plus the invalid transitions a person can actually attempt.
 
 ## Priority
+
+Order the document P0, then P1, then P2.
 
 - P0: data loss, money, access, a broken primary flow, or an existing caller that would regress.
 - P1: a common failure or a boundary.
@@ -55,30 +50,16 @@ A bug gets one regression case: it fails on the current behavior and passes once
 - Title
 - Source requirement or changed behavior
 - Priority
-- Preconditions
+- Preconditions: role, starting data, and starting state
 - Test data
-- Steps
-- Expected result
-- Tags, when one applies
-
-One behavior per case. A person can run it without guessing. The expected result names the visible outcome, the error, the resulting state, and any data that must stay unchanged.
+- Steps: actions only. Do not repeat the expected result.
+- Expected result: only what a person can see, including the error, the resulting state, and data that must stay unchanged
+- Tags: `happy`, `failure`, `boundary`, `permission`, or `regression`. Use one only when it applies. Use no other tag.
 
 ## Summary
 
-Counts by priority. Each source requirement or changed behavior mapped to case IDs. Anything left uncovered. Then assumptions and open questions.
-
-Do not add a matrix. Do not claim complete coverage when the source is ambiguous.
+Counts by priority. Each source requirement or changed behavior mapped to case IDs. Anything left uncovered. Then assumptions and open questions. Do not add a matrix. Do not claim complete coverage when the source is ambiguous.
 
 ## Replies
 
-The document is the deliverable. The note around it is 1–2 lines: how many cases, and what is still uncovered.
-
-## Done
-
-- [ ] Every case traces to a source requirement or changed behavior
-- [ ] Existing tests are cited instead of duplicated
-- [ ] Non-goals have no cases
-- [ ] Each invalid case changes one condition
-- [ ] Every expected result is observable
-- [ ] Missing P0 behavior has a case or an open question
-- [ ] The summary lists counts, coverage, and what is uncovered
+Say how many cases, and what is still uncovered.

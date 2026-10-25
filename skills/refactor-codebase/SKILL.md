@@ -1,37 +1,30 @@
 ---
 name: refactor-codebase
 description: >-
-  Audit a whole repo or a named area for duplication, divergent flows, dead
-  code, over-engineering, evident performance waste, and drift from the repo's
-  own standards, then apply approved refactor steps one at a time. Use when the
-  user asks to refactor, clean up, standardize, or audit the structure of a
-  codebase. Do not use for a security audit.
+  Audit a repo for duplication, divergent flows, dead code, over-engineering,
+  waste, and standards drift, then apply approved steps. Use when the user
+  asks to refactor or clean up a codebase. Do not audit security.
 ---
 
 # Refactor codebase
 
-## Use case
-
-Find where the code repeats, drifts, or does more than it needs to, against the repo's own standards. Then fix it in small, approved steps that keep behavior the same.
-
 ## Scope
 
-The audit is read-only. It ends in a report and an ordered plan. Code changes start only after the user approves a batch of steps.
+The audit is read-only until the user approves a batch. Then apply one step at a time with `write-simple-code`.
 
-Skip code the team does not own: `node_modules`, build output, generated files, vendored code, lockfiles, and migrations.
-
-A security issue gets one line in the report, pointing to the `audit-security` skill. Do not review security here.
+Skip code the team does not own: `node_modules`, build output, generated files, vendored code, lockfiles, and migrations. A security issue gets one line pointing to `audit-security`.
 
 ## Before auditing
 
-Ask every question that would change the plan in one turn: the target area, hard constraints, and behavior that must not change. Skip questions the repo already answers.
+Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.
+
+Ask the target area, hard constraints, and behavior that must not change.
 
 ## Standards
 
 1. Read the repo's lint, format, and tsconfig settings, and any convention file such as `AGENTS.md`.
 2. Where config is silent, the standard is the pattern most of the repo already uses for naming, file layout, module boundaries, imports, data fetching, validation, and error handling.
-3. When the config and the majority pattern disagree, the config wins.
-4. When there is no clear majority, add an open question. Do not invent a standard or bring one in from outside the repo.
+3. When the config and the majority pattern disagree, the config wins. When there is no clear majority, add an open question. Do not invent a standard.
 
 ## What to find
 
@@ -55,40 +48,25 @@ Never propose a new abstraction, a new dependency, a framework migration, or a s
 
 Mark each step's effort and risk as low, medium, or high.
 
-## Plan
+## Plan and apply
 
-- Order the steps: delete dead code, then replace reimplemented code, then fix standards drift, then unify flows, then simplify what is left.
-- A formatting-only change is its own step and uses the repo's formatter script. Never mix it with a logic change.
-- Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it. When no test covers a step, say so and use the `generate-test-cases` skill before that step.
-- A merge keeps every current caller's output the same. If any caller's output would change, that is a behavior change and needs its own approved step.
-- On a big repo, group the steps into small batches. The user approves one batch at a time.
-- Stop after the report. Edit nothing until the user approves a batch.
+Order the steps: delete dead code, then replace reimplemented code, then fix standards drift, then unify flows, then simplify what is left. A formatting-only change is its own step and uses the repo's formatter. Never mix it with a logic change.
 
-## Apply
+Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it. When no test covers a step, say so and use `generate-test-cases` before that step. A merge keeps every current caller's output the same. If any caller's output would change, that needs its own approved step. On a big repo, the user approves one batch at a time.
 
-1. Before the first step, run the repo's lint, typecheck, and tests, and record what already fails. A failure that was there before is not blamed on the refactor.
-2. Apply one approved step at a time, following the `write-simple-code` skill. The approved step is the request, so the change stays inside that step's files. Each step stays its own diff.
-3. After each step, run the same checks. If a new failure appears, revert that step's edits, stop, and report. Do not continue to the next step.
-4. After a batch, re-check the remaining steps, because earlier steps change later ones. Report, then wait for the next approval.
+Stop after the report. Edit nothing until the user approves a batch.
 
-Never change public behavior or an API without an approved step that says so. Do not commit unless the user asks.
+1. Before the first step, run the repo's lint, typecheck, and tests, and record what already fails.
+2. Apply one approved step at a time with `write-simple-code`. Each step stays its own diff.
+3. After each step, run the same checks. If a new failure appears, revert that step, stop, and report.
+4. After a batch, re-check the remaining steps, then wait for the next approval.
+
+Do not commit unless the user asks.
 
 ## Summary
 
-Counts by priority, the steps applied, the steps left, the areas read and not read, and open questions. Use only counts that come from evidence. Do not claim lines saved or speed gained, and do not call a partial audit complete.
+Counts by priority, the steps applied, the steps left, the areas read and not read, and open questions. Do not claim lines saved or speed gained, and do not call a partial audit complete.
 
 ## Replies
 
-The report is the deliverable. The note around it is 1–2 lines: how many findings, and what needs approval next. After a batch, state what changed and what failed, if anything.
-
-## Done
-
-- [ ] Standards come from the repo's config or its majority pattern
-- [ ] Every finding cites its files and callers
-- [ ] Dead code is confirmed beyond a search
-- [ ] No step adds an abstraction, a dependency, or a migration
-- [ ] Every step names its files and its test
-- [ ] Nothing was edited before approval
-- [ ] A baseline was recorded before the first step
-- [ ] A step with a new failure was reverted
-- [ ] The summary lists what was read and what was not
+Say how many findings, and what needs approval next. After a batch, state what changed and what failed, if anything.

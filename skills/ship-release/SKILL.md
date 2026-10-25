@@ -1,32 +1,27 @@
 ---
 name: ship-release
 description: >-
-  Check whether a change is ready to ship, with a go or no-go, what to watch,
-  and how to roll back. Use when the user asks for a release check, a deploy
-  check, or release notes. Do not deploy or change production.
+  Decide if a change is ready to ship, with a go or no-go, what to watch, and
+  how to roll back. Use when the user asks for a release check. Do not deploy.
 ---
 
 # Ship a release
 
-## Use case
-
-Decide whether a change is ready to ship, and say what to do if it is not.
-
 ## Scope
 
-Read the diff, the test results, the migrations, the feature flags, the dependency changes, the deploy config, and the known risks.
-
-Do not deploy, change production, or create a release until the user explicitly approves that step.
+Read the diff, the test results, the migrations, the feature flags, the dependency changes, the deploy config, and the known risks. Do not deploy, change production, or create a release until the user explicitly approves that step.
 
 ## Before writing
 
-Ask every unanswered question that would change the go or no-go answer: the target environment, the migrations included, and the checks already run. Send them in one turn.
+Ask every blocking question in one turn. Never invent a fact. Put an unknown under Open questions and name what it blocks. Replies are 1–2 lines. Write a paragraph only when the user asks.
+
+Ask the target environment, the migrations included, and the checks already run.
 
 ## The check
 
 - What changed, in one line per user-facing change. Leave out internal refactors.
 - Tests: which ran, which failed, and which did not run.
-- Migrations and backfills, and whether `change-data-safely` has an approved plan for each one.
+- Migrations and backfills. Each one needs the current state (table, row count, rows touched), the forward change, a rollback or the data that would be lost, steps that are safe to re-run, batching for a large table, and a check that proves the result. A migration missing any of these is a no-go.
 - Feature flags and dependency changes.
 - Known risks, each with the check that would catch it.
 
@@ -38,16 +33,8 @@ Ask every unanswered question that would change the go or no-go answer: the targ
 - The rollback steps, in the order to run them.
 - A short note of what changed for users.
 
-A missing test result, an unapproved migration, or an unknown rollback is a no-go. Do not invent a test result. Put an unknown under Open questions.
+A missing test result, a migration missing any item above, or an unknown rollback is a no-go. Do not invent a test result.
 
 ## Replies
 
-The check is the deliverable. The note around it is 1–2 lines: go or no-go, and the reason.
-
-## Done
-
-- [ ] The answer is go or no-go, with reasons
-- [ ] Tests, migrations, flags, and dependencies were checked
-- [ ] Rollback steps are in order
-- [ ] The user-facing note leaves out internal refactors
-- [ ] Nothing was deployed
+Say go or no-go, and the reason.
