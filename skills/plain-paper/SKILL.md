@@ -14,7 +14,7 @@ A spec describes what will be built. Documentation describes what exists.
 
 - A PRD says what and why. It does not choose the implementation.
 - An engineering spec says how the system behaves: interfaces, data, failure, trade-offs, rollout, and verification.
-- Documentation covers a flow, API reference, architecture note, runbook, onboarding guide, README, changelog, user guide, or another document the user names.
+- Documentation covers a flow, API reference, runbook, onboarding guide, README, changelog, user guide, or another document the user names. An architecture note, a system design, or a scale or performance review goes to `the-map`.
 
 Code changes are out of scope. A security need is one requirement. Do not invent controls or run an audit.
 

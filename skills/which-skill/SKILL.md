@@ -25,6 +25,7 @@ Read the chosen skill and follow it. Do not restate its rules here.
 | Review a diff or pull request | `red-pen` |
 | Diagnose or debug a failure | `the-cause` |
 | Release check or go / no-go | `go-or-stop` |
+| System design, architecture review, or scale/performance improvement | `the-map` |
 
 Run one skill when one fits. Say which skill or chain you picked in one line. Ask one question when two skills fit equally.
 
@@ -36,5 +37,6 @@ Pause for approval before a step that writes code or would deploy.
 - Feature: `plain-paper` as a spec, then `no-slop`, then `red-pen`.
 - Release: `red-pen`, then `go-or-stop`. A migration is covered inside `go-or-stop`.
 - Cleanup: `one-shape`, which applies its changes through `no-slop`.
+- Design: `the-map`, then `plain-paper` if a spec is still needed, then `no-slop` after approval.
 
-`go-or-stop` does not deploy. `one-shape` does not edit until a batch is approved.
+`go-or-stop` does not deploy. `one-shape` does not edit until a batch is approved. `the-map` does not write code.
