@@ -1,11 +1,14 @@
 {
 	"name": "@aayushchugh/skills",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "The agent skills I use while building real products.",
 	"author": "Ayush Chugh <hey@ayushchugh.com>",
 	"license": "MIT",
 	"homepage": "https://skills.ayushchugh.com",
-	"repository": "git+https://github.com/aayushchugh/skills.git",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aayushchugh/skills.git"
+	},
 	"bugs": "https://github.com/aayushchugh/skills/issues",
 	"keywords": ["agent-skills", "skills", "cursor", "claude", "openai", "ai"],
 	"files": ["skills"]
