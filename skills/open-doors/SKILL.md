@@ -1,12 +1,12 @@
 ---
-name: audit-security
+name: open-doors
 description: >-
   Review application code, APIs, dependencies, secrets, and deploy config for
   injection, web attacks, and DDoS controls. Use when the user asks for a
   security audit. Never attack a live target.
 ---
 
-# Audit security
+# Open doors
 
 ## Scope
 

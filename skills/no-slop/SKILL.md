@@ -1,12 +1,12 @@
 ---
-name: write-simple-code
+name: no-slop
 description: >-
   Write the smallest readable code that reuses existing code, installed
   utilities, and repo patterns, and fixes bugs at the root cause. Use when
   implementing, fixing, or reviewing code. Do not use for docs.
 ---
 
-# Write simple code
+# No slop
 
 ## Scope
 

@@ -1,11 +1,11 @@
 ---
-name: ship-release
+name: go-or-stop
 description: >-
   Decide if a change is ready to ship, with a go or no-go, what to watch, and
   how to roll back. Use when the user asks for a release check. Do not deploy.
 ---
 
-# Ship a release
+# Go or stop
 
 ## Scope
 

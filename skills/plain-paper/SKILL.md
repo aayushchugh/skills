@@ -1,12 +1,12 @@
 ---
-name: write-docs
+name: plain-paper
 description: >-
   Write a spec or other documentation from the request, the code, and relevant
   sources. Use when the user asks for a PRD, spec, flow, API reference,
   runbook, guide, or README. Do not change code.
 ---
 
-# Write docs
+# Plain paper
 
 ## Scope
 

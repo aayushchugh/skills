@@ -1,12 +1,12 @@
 ---
-name: generate-test-cases
+name: cases-to-run
 description: >-
   Write a small, risk-based set of test cases from a spec, diff, or bug
   report. Use when the user asks for test cases or QA coverage. Do not write
   test code or audit security.
 ---
 
-# Generate test cases
+# Cases to run
 
 ## Scope
 

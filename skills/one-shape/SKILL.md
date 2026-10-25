@@ -1,18 +1,18 @@
 ---
-name: refactor-codebase
+name: one-shape
 description: >-
   Audit a repo for duplication, divergent flows, dead code, over-engineering,
   waste, and standards drift, then apply approved steps. Use when the user
   asks to refactor or clean up a codebase. Do not audit security.
 ---
 
-# Refactor codebase
+# One shape
 
 ## Scope
 
-The audit is read-only until the user approves a batch. Then apply one step at a time with `write-simple-code`.
+The audit is read-only until the user approves a batch. Then apply one step at a time with `no-slop`.
 
-Skip code the team does not own: `node_modules`, build output, generated files, vendored code, lockfiles, and migrations. A security issue gets one line pointing to `audit-security`.
+Skip code the team does not own: `node_modules`, build output, generated files, vendored code, lockfiles, and migrations. A security issue gets one line pointing to `open-doors`.
 
 ## Before auditing
 
@@ -52,12 +52,12 @@ Mark each step's effort and risk as low, medium, or high.
 
 Order the steps: delete dead code, then replace reimplemented code, then fix standards drift, then unify flows, then simplify what is left. A formatting-only change is its own step and uses the repo's formatter. Never mix it with a logic change.
 
-Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it. When no test covers a step, say so and use `generate-test-cases` before that step. A merge keeps every current caller's output the same. If any caller's output would change, that needs its own approved step. On a big repo, the user approves one batch at a time.
+Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it. When no test covers a step, say so and use `cases-to-run` before that step. A merge keeps every current caller's output the same. If any caller's output would change, that needs its own approved step. On a big repo, the user approves one batch at a time.
 
 Stop after the report. Edit nothing until the user approves a batch.
 
 1. Before the first step, run the repo's lint, typecheck, and tests, and record what already fails.
-2. Apply one approved step at a time with `write-simple-code`. Each step stays its own diff.
+2. Apply one approved step at a time with `no-slop`. Each step stays its own diff.
 3. After each step, run the same checks. If a new failure appears, revert that step, stop, and report.
 4. After a batch, re-check the remaining steps, then wait for the next approval.
 

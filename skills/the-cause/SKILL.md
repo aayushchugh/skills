@@ -1,16 +1,16 @@
 ---
-name: diagnose-bug
+name: the-cause
 description: >-
   Find a bug's root cause from the report, the code path, and the evidence.
   Use when the user asks to diagnose or debug a failure. Do not write the fix
   or the regression test.
 ---
 
-# Diagnose a bug
+# The cause
 
 ## Scope
 
-Read only the path the bug touches, its callers, and the logs, traces, or connected sources needed to prove the cause. Do not edit the code. The fix goes to `write-simple-code`. The regression case goes to `generate-test-cases`.
+Read only the path the bug touches, its callers, and the logs, traces, or connected sources needed to prove the cause. Do not edit the code. The fix goes to `no-slop`. The regression case goes to `cases-to-run`.
 
 ## Before writing
 
