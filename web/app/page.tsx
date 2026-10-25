@@ -12,7 +12,7 @@ function StarBanner() {
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3">
       <p className="text-sm text-neutral-300">
-        Star the repo so other students can find these skills.
+        Star the repo to follow along as these skills get better.
       </p>
       <a
         href={site.githubUrl}
@@ -31,12 +31,13 @@ export default function Home() {
   return (
     <main className="flex flex-1 flex-col gap-12 pb-16">
       <section className="max-w-2xl pt-4">
-        <h1 className="text-3xl font-medium text-white sm:text-4xl">Skills for your agent</h1>
+        <h1 className="text-3xl font-medium text-white sm:text-4xl">The skills I use</h1>
         <p className="mt-4 text-lg leading-8">
-          These are the agent skills I write and use while building real
-          products. Each one is a <strong className="text-white">SKILL.md</strong>{" "}
-          file that teaches your coding agent a repeatable workflow. Install
-          the package to use them, or{" "}
+          These are the agent skills I use while building real products. I keep
+          optimizing them as better practices show up. Each one is a{" "}
+          <strong className="text-white">SKILL.md</strong> file that teaches a
+          coding agent a repeatable workflow. Install the package to use them,
+          or{" "}
           <a href={site.githubUrl} className={textLink}>
             read the source
           </a>{" "}
@@ -73,8 +74,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <StarBanner />
     </main>
   );
 }

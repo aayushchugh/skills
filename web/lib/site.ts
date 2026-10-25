@@ -3,7 +3,7 @@ export const site = {
   author: "Ayush Chugh",
   url: "https://skills.ayushchugh.com",
   description:
-    "Agent skills I write and use while building real products. Install the npm package to sync them into your coding agent, or star the repo and learn how they work.",
+    "The agent skills I use while building real products, kept up to date as better practices show up.",
   npmPackage: "@aayushchugh/skills",
   githubRepo: "aayushchugh/skills",
   githubUrl: "https://github.com/aayushchugh/skills",
