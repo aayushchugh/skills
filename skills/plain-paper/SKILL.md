@@ -1,9 +1,8 @@
 ---
 name: plain-paper
 description: >-
-  Write a spec or other documentation from the request, the code, and relevant
-  sources. Use when the user asks for a PRD, spec, flow, API reference,
-  runbook, guide, or README. Do not change code.
+  Use when asked for a PRD, spec, flow, API reference, runbook, guide, or
+  README. Not for code or a system design.
 ---
 
 # Plain paper

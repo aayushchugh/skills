@@ -1,8 +1,8 @@
 ---
 name: go-or-stop
 description: >-
-  Decide if a change is ready to ship, with a go or no-go, what to watch, and
-  how to roll back. Use when the user asks for a release check. Do not deploy.
+  Use when asked if a change is ready to ship, or for a go or no-go. Not for
+  deploying.
 ---
 
 # Go or stop

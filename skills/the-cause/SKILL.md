@@ -1,9 +1,8 @@
 ---
 name: the-cause
 description: >-
-  Find a bug's root cause from the report, the code path, and the evidence.
-  Use when the user asks to diagnose or debug a failure. Do not write the fix
-  or the regression test.
+  Use when asked to diagnose, debug, or find why something fails. Not for
+  writing the fix or the test.
 ---
 
 # The cause

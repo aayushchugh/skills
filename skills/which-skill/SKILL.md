@@ -1,8 +1,8 @@
 ---
 name: which-skill
 description: >-
-  Pick and run the right skill, or a chain of skills, for a request. Use when
-  unsure which skill applies or when a task spans several steps.
+  Use when a request could match more than one skill, or needs several skills
+  in a row.
 ---
 
 # Which skill

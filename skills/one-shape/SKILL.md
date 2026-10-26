@@ -1,9 +1,8 @@
 ---
 name: one-shape
 description: >-
-  Audit a repo for duplication, divergent flows, dead code, over-engineering,
-  waste, and standards drift, then apply approved steps. Use when the user
-  asks to refactor or clean up a codebase. Do not audit security.
+  Use when asked to refactor, clean up, or standardize a repo. Not for a
+  security audit or a single pull request.
 ---
 
 # One shape

@@ -1,9 +1,8 @@
 ---
 name: cases-to-run
 description: >-
-  List cases to verify by hand, or name the code tests for no-slop when
-  asked. Use when the user asks for test cases or to test a flow. Do not edit
-  code or audit security.
+  Use when asked for test cases, QA coverage, or how to test a flow by hand.
+  Not for writing the test code or a security audit.
 ---
 
 # Cases to run

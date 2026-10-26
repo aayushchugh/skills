@@ -1,9 +1,8 @@
 ---
 name: red-pen
 description: >-
-  Review a diff or pull request for bugs, regressions, broken callers, missing
-  tests, and unmet requirements. Use when the user asks for a code review. Do
-  not audit security, refactor, or write tests.
+  Use when asked to review a diff, a pull request, or a change. Not for a
+  security audit, a refactor, or writing tests.
 ---
 
 # Red pen

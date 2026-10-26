@@ -1,10 +1,8 @@
 ---
 name: the-map
 description: >-
-  Map, propose, or improve a system's design like a senior engineer,
-  grounding the recommendation in real usage and activity. Use when the user
-  asks for a system design, architecture review, or scale or performance
-  improvement. Do not write code.
+  Use when asked for a system design, an architecture review, or a scale or
+  performance improvement. Not for writing code or a PRD.
 ---
 
 # The map

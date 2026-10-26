@@ -1,9 +1,8 @@
 ---
 name: no-slop
 description: >-
-  Write the smallest readable code that reuses existing code, installed
-  utilities, and repo patterns, and fixes bugs at the root cause. Use when
-  implementing, fixing, or reviewing code. Do not use for docs.
+  Use when writing or changing code, including a test that was asked for.
+  Not for docs, a review, or a design.
 ---
 
 # No slop

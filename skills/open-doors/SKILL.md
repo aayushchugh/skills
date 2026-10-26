@@ -1,9 +1,8 @@
 ---
 name: open-doors
 description: >-
-  Review application code, APIs, dependencies, secrets, and deploy config for
-  injection, web attacks, and DDoS controls. Use when the user asks for a
-  security audit. Never attack a live target.
+  Use when asked for a security audit or a pentest-readiness review. Not for
+  a live attack or a normal code review.
 ---
 
 # Open doors
