@@ -1,16 +1,16 @@
 ---
 name: cases-to-run
 description: >-
-  Write a small, risk-based set of test cases from a spec, diff, or bug
-  report. Use when the user asks for test cases or QA coverage. Do not write
-  test code or audit security.
+  List cases to verify by hand, or name the code tests for no-slop when
+  asked. Use when the user asks for test cases or to test a flow. Do not edit
+  code or audit security.
 ---
 
 # Cases to run
 
 ## Scope
 
-Write the test-case document only. Do not write test code, run tests, or change the source. Cover a security requirement or access rule the source already states. Do not invent controls.
+Do not edit code. `no-slop` is the only skill that writes. Do not write anything until asked. Cover a security requirement or access rule the source already states. Do not invent controls.
 
 Write the smallest set that would catch a real failure. Skip a case that does not change the outcome.
 
@@ -26,41 +26,33 @@ Ask what would change the expected behavior, data, environment, limits, or permi
 - Code or a diff: the changed behavior, its contract, its callers, and the conditions that changed. Stop at the affected path.
 - A bug report: the shortest reproduction, expected versus actual behavior, and the environment when it changes the result.
 
-If the repository already tests a behavior, cite that test. Do not write a duplicate manual case.
+If the repository already tests a behavior, say so. Do not ask `no-slop` to add a second copy, and do not repeat it as a manual case.
 
 ## Which cases
 
 Cover the relevant happy path, failure, boundary, state change, permission, and regression. Use one representative value per equivalence class. A boundary is the edge: the last allowed value and the first rejected value.
 
-Test one invalid condition at a time. Combine inputs only when they change the outcome together. One behavior is one case, even when the spec and the code both mention it. Cite both sources on that case.
+Test one invalid condition at a time. Combine inputs only when they change the outcome together. One behavior is one case, even when the spec and the code both mention it.
 
 Skip a behavior the spec lists as a non-goal. A missing P0 behavior gets a case, or an open question that says why it cannot be tested yet.
 
 A bug gets one regression case: it fails on the current behavior and passes once the expected behavior is true. A state flow gets the valid path plus the invalid transitions a person can actually attempt.
 
-## Priority
+## The list
 
-Order the document P0, then P1, then P2.
+The default is a bullet list to verify by hand. Order it P0, then P1, then P2. Each bullet is the behavior and the expected result.
 
 - P0: data loss, money, access, a broken primary flow, or an existing caller that would regress.
 - P1: a common failure or a boundary.
 - P2: a rare edge.
 
-## Each case
+## Code tests
 
-- ID
-- Title
-- Source requirement or changed behavior
-- Priority
-- Preconditions: role, starting data, and starting state
-- Test data
-- Steps: actions only. Do not repeat the expected result.
-- Expected result: only what a person can see, including the error, the resulting state, and data that must stay unchanged
-- Tags: `happy`, `failure`, `boundary`, `permission`, or `regression`. Use one only when it applies. Use no other tag.
+Write code tests only when the user asks for them. Name the behaviors. `no-slop` writes the test in the repo's existing style. If the repo has no test runner, ask once before `no-slop` adds one.
 
 ## Summary
 
-Counts by priority. Each source requirement or changed behavior mapped to case IDs. Anything left uncovered. Then assumptions and open questions. Do not add a matrix. Do not claim complete coverage when the source is ambiguous.
+Counts by priority, and anything left uncovered. Do not claim complete coverage when the source is ambiguous.
 
 ## Replies
 

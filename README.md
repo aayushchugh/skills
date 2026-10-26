@@ -29,7 +29,7 @@ Replace `no-slop` with any id below.
 
 - `no-slop` — No slop. Write the smallest readable code that reuses existing code, installed utilities, and repo patterns, and fixes bugs at the root cause.
 - `plain-paper` — Plain paper. Write a spec or other documentation from the request, the code, and relevant sources.
-- `cases-to-run` — Cases to run. Write a small, risk-based set of test cases from a spec, diff, or bug report.
+- `cases-to-run` — Cases to run. List the cases to verify by hand, or name the code tests for `no-slop` to write when asked.
 - `open-doors` — Open doors. Review application code, APIs, dependencies, secrets, and deploy config for injection, web attacks, and DDoS controls.
 - `one-shape` — One shape. Audit a repo for duplication, divergent flows, dead code, over-engineering, waste, and standards drift, then apply approved steps.
 - `red-pen` — Red pen. Review a diff or pull request for bugs, regressions, broken callers, missing tests, and unmet requirements.

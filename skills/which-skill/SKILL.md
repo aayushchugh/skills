@@ -23,7 +23,7 @@ Read the chosen skill and follow it. Do not restate its rules here.
 | --- | --- |
 | Implement, fix, or review code | `no-slop` |
 | PRD, engineering spec, flow, API reference, runbook, guide, or README | `plain-paper` |
-| Test cases or regression coverage | `cases-to-run` |
+| Manual test cases, or code tests for `no-slop` when asked | `cases-to-run` |
 | Security audit | `open-doors` |
 | Refactor or clean up a repo | `one-shape` |
 | Review a diff or pull request | `red-pen` |

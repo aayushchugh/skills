@@ -54,11 +54,11 @@ Mark each step's effort and risk as low, medium, or high.
 
 Order the steps: delete dead code, then replace reimplemented code, then fix standards drift, then unify flows, then simplify what is left. A formatting-only change is its own step and uses the repo's formatter. Never mix it with a logic change.
 
-Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it. When no test covers a step, say so and use `cases-to-run` before that step. A merge keeps every current caller's output the same. If any caller's output would change, that needs its own approved step. On a big repo, the user approves one batch at a time.
+Each step is small, keeps behavior the same, ships on its own, names its files, and names the test that checks it when one exists. A repo with no test code does not block a step. A merge keeps every current caller's output the same. If any caller's output would change, that needs its own approved step. On a big repo, the user approves one batch at a time.
 
 Stop after the report. Edit nothing until the user approves a batch.
 
-1. Before the first step, run the repo's lint, typecheck, and tests, and record what already fails.
+1. Before the first step, run the repo's lint, typecheck, and tests when the repo has them, and record what already fails.
 2. Apply one approved step at a time with `no-slop`. Each step stays its own diff.
 3. After each step, run the same checks. If a new failure appears, revert that step, stop, and report.
 4. After a batch, re-check the remaining steps, then wait for the next approval.

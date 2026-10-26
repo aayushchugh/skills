@@ -27,7 +27,7 @@ Ask only what would change the requested files, behavior, API, or approach. Leav
 3. Prefer, in order: do nothing, existing code, the standard library, a native platform feature, an already-installed dependency. If that dependency exports the function, call it. Do not rewrite date-fns, lodash, or any other installed package.
 4. Make the smallest readable change that finishes the requested behavior. A bug report names a symptom. Find the source and fix that. A shared-function fix keeps existing callers working, unless their current behavior is the bug.
 5. Keep trust-boundary validation and error handling that prevents data loss.
-6. Run the repo's existing test for the changed path. Add one small check only when that path has no test and the branch is non-trivial.
+6. Run the existing test for the changed path when one exists. If the project has no test code, do not add one and do not block. Write a test only when `cases-to-run` or the user asks.
 
 ## Rules
 

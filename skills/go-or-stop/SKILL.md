@@ -11,7 +11,7 @@ description: >-
 
 Read the diff, the test results, the migrations, the feature flags, the dependency changes, the deploy config, and the known risks. Do not deploy, change production, or create a release until the user explicitly approves that step.
 
-No-go when a test result, a migration check, or a rollback is missing. Do not talk the release into a go.
+No-go when a migration check or a rollback is missing. A failed or missing test result is a no-go only when the repo already has test code. A repo with no test code skips that check. Do not talk the release into a go.
 
 ## Before writing
 
@@ -22,7 +22,7 @@ Ask the target environment, the migrations included, and the checks already run.
 ## The check
 
 - What changed, in one line per user-facing change. Leave out internal refactors.
-- Tests: which ran, which failed, and which did not run.
+- Tests, when the repo has test code: which ran, which failed, and which did not run. A repo with no test code skips this check.
 - Migrations and backfills. Each one needs the current state (table, row count, rows touched), the forward change, a rollback or the data that would be lost, steps that are safe to re-run, batching for a large table, and a check that proves the result. A migration missing any of these is a no-go.
 - Feature flags and dependency changes.
 - Known risks, each with the check that would catch it.
@@ -35,7 +35,7 @@ Ask the target environment, the migrations included, and the checks already run.
 - The rollback steps, in the order to run them.
 - A short note of what changed for users.
 
-A missing test result, a migration missing any item above, or an unknown rollback is a no-go. Do not invent a test result.
+A migration missing any item above, or an unknown rollback, is a no-go. A missing test result is a no-go only when the repo has test code. Do not invent a test result.
 
 ## Replies
 
