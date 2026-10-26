@@ -34,17 +34,22 @@ Cover the relevant happy path, failure, boundary, state change, permission, and 
 
 Test one invalid condition at a time. Combine inputs only when they change the outcome together. One behavior is one case, even when the spec and the code both mention it.
 
-Skip a behavior the spec lists as a non-goal. A missing P0 behavior gets a case, or an open question that says why it cannot be tested yet.
+Skip a behavior the spec lists as a non-goal. A missing behavior that loses data, money, access, or the main flow gets a case, or an open question that says why it cannot be tested yet.
 
-A bug gets one regression case: it fails on the current behavior and passes once the expected behavior is true. A state flow gets the valid path plus the invalid transitions a person can actually attempt.
+A bug gets one case: it fails now and passes once the expected behavior is true. A flow gets the valid path plus the invalid steps a person can actually try.
+
+These rules stay inside the skill. Do not print them as labels on a case.
 
 ## The list
 
-The default is a bullet list to verify by hand. Order it P0, then P1, then P2. Each bullet is the behavior and the expected result.
+Each case has these parts, in this order, in plain language a person can follow without the codebase:
 
-- P0: data loss, money, access, a broken primary flow, or an existing caller that would regress.
-- P1: a common failure or a boundary.
-- P2: a rare edge.
+- **Case:** a short name of the behavior.
+- **Prerequisites:** only when the case needs a starting state. Leave this out when there is none.
+- **Description:** one or two sentences of what should happen, including the result a person can see.
+- **Steps to verify:** numbered actions. The last step says what to look at and what should be true.
+
+No priority, no tags, no source line, and no separate test-data or expected-result field. Do not use a word such as journal or handler unless the product shows that word on screen.
 
 ## Code tests
 
@@ -52,7 +57,7 @@ Write code tests only when the user asks for them. Name the behaviors. `no-slop`
 
 ## Summary
 
-Counts by priority, and anything left uncovered. Do not claim complete coverage when the source is ambiguous.
+Say what is still uncovered. Do not claim complete coverage when the source is ambiguous.
 
 ## Replies
 
