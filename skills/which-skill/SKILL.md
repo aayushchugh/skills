@@ -30,6 +30,7 @@ Read the chosen skill and follow it. Do not restate its rules here.
 | Diagnose or debug a failure | `the-cause` |
 | Release check or go / no-go | `go-or-stop` |
 | System design, architecture review, or scale/performance improvement | `the-map` |
+| What's pending, what's next, or the status of the current plan | `whats-next` |
 
 Run one skill when one fits. Say which skill or chain you picked in one line. Ask one question when two skills fit equally.
 

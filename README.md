@@ -36,4 +36,5 @@ Replace `no-slop` with any id below.
 - `the-cause` — The cause. Find a bug's root cause from the report, the code path, and the evidence.
 - `go-or-stop` — Go or stop. Decide if a change is ready to ship, with a go or no-go, what to watch, and how to roll back.
 - `the-map` — The map. Map, propose, or improve a system's design like a senior engineer, grounding the recommendation in real usage and activity.
+- `whats-next` — What's next. Answer what's pending, what's next, or the status from the plan this conversation is working on.
 - `which-skill` — Which skill. Pick and run the right skill, or a chain of skills, for a request.
