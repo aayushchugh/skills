@@ -1,8 +1,8 @@
 ---
 name: which-skill
 description: >-
-  Use when a request could match more than one skill, or needs several skills
-  in a row.
+  Use when two skills fit equally, or a request needs several skills in a row.
+  Not when one skill already fits.
 ---
 
 # Which skill
@@ -17,26 +17,15 @@ Ask every blocking question in one turn. Never invent a fact. Put an unknown und
 
 ## Pick
 
-Read the chosen skill and follow it. Do not restate its rules here.
+Each skill's description already says when to use it. Do not restate those rules here.
 
-| Request | Skill |
-| --- | --- |
-| Implement, fix, or review code | `no-slop` |
-| PRD, engineering spec, flow, API reference, runbook, guide, or README | `plain-paper` |
-| Manual test cases, or code tests for `no-slop` when asked | `cases-to-run` |
-| Security audit | `open-doors` |
-| Refactor or clean up a repo | `one-shape` |
-| Review a diff or pull request | `red-pen` |
-| Diagnose or debug a failure | `the-cause` |
-| Release check or go / no-go | `go-or-stop` |
-| System design, architecture review, or scale/performance improvement | `the-map` |
-| What's pending, what's next, or the status of the current plan | `whats-next` |
-
-Run one skill when one fits. Say which skill or chain you picked in one line. Ask one question when two skills fit equally.
+Say which skill or chain you picked in one line. Ask one question when two skills fit equally.
 
 ## Chains
 
 Pause for approval before a step that writes code or would deploy.
+
+Read only the skill for the current step. Name the later steps. Do not open the next skill until this step is done, and approved when that step writes or deploys.
 
 - Bug: `the-cause`, then `no-slop`, then `cases-to-run`, then `red-pen`.
 - Feature: `plain-paper` as a spec, then `no-slop`, then `red-pen`.
